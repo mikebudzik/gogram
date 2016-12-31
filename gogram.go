@@ -28,11 +28,13 @@ func main() {
 	// look for single letter words, they are probably A, I, or possibly O
 	// think about apostraphies I'M or XXXXXX'S
 
-	var gram string = "BWIJLIC BVOD TVD WI KIC DX MWQ EKUXQK MWQ TVDO WI KIC DX BWIJLIC."
+	var gram string = "KIF HR WBF RIIA FPI JINHYKUMOW OWRVIJ BJ FPI GIDBMJOFUM OWRVIJ, YHF FPI JUZPF OWRVIJ. KIF HR WBF RIIA FB TUC FPI YKODI TBJ FPI NORF. KIF HR OMMINF BHJ BVW JIRNBWRUYUKUFS TBJ FPI THFHJI."
+	var counts [26]int
+
 	fmt.Println("The crpytogram is \n\n"+gram)
 	for i := 0; i < 26; i++ {
 		// loop over the letters of the alphabet
-		fmt.Printf("%q: %d\n", i+65, count(gram, string(i+65)))
+		counts[i] = count(gram, string(i+65))
+		fmt.Printf("%q: %d\n", i+65, counts[i])
 	}
 }
-
